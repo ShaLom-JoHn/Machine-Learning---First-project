@@ -1,0 +1,24 @@
+# Job Salary Prediction 
+
+## Questions Answered
+1. Which industries pay the most / least?
+2. Does more education lead to higher salary?
+3. Does location matter?
+4. Which factor matters most for salary — job title, experience, or skills?
+5. Build a model that predicts salary.
+
+## Key Findings
+- Industry and location show statistically real salary differences (ANOVA).
+- Education level does not meaningfully affect salary in this dataset.
+- Among job_title, experience, and skills — experience_years is the strongest predictor; skills_count is negligible.
+- Final model: Random Forest — R² = 0.96, average error (MAE) ≈ ₦,292.48. Outperformed Random Forest (R² = 0.91).
+
+## Limitations
+- `location` ranked as the top salary driver in Random Forest importance — suspicious, since real data would expect experience or job title to dominate. Suggests an artificial/simplified data-generation process.
+- No external validation — tested only on a held-out split of the same dataset, not real-world data.
+- Categorical variables (job_title, industry, location) one-hot encoded with no regularization which may cause some overfitting risk
+
+## Conclusion
+Industry and location show statistically real salary differences (ANOVA); education level does not meaningfully affect salary.
+Among job_title, experience, and skills, experience_years is the strongest predictor. 
+The final model predicts salary accurately, off by about ₦7,292 on average, and holds up on spot-checks — though conclusions are limited by the dataset being synthetic rather than real-world.
